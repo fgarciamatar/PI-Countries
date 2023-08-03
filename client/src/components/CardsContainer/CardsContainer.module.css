@@ -1,0 +1,11 @@
+.container {
+    border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+   flex-wrap: wrap;
+   justify-content: space-between;
+   padding: 2em ;
+   background-image:url("../../../imagenes/Landing.jpg");
+   background-size: cover;
+   background-position: center;
+}

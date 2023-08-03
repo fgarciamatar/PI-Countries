@@ -1,0 +1,54 @@
+
+.background {
+    margin: 0;
+    padding:3%;
+    background-image:url("../../../imagenes/Landing.jpg");
+    background-size: cover;
+    background-position: center;
+  
+}
+.container {
+    border: solid 4px rgba(0, 0, 0, 0.751);
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    height: 85vh;
+    margin: 0;
+}
+
+h1{
+    color: #0c0c0c;
+    font-size:xx-large;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+   
+}
+.imagen {
+    box-shadow: 5px 3px 5px rgba(250, 250, 250, 0.774);
+    border-radius: 5em;
+    background-color: #ffffffb1;
+    height: 10rem;
+    padding: 0em;
+	margin: 0em;
+}
+
+.boton {
+    text-decoration: none;
+    width: 5em;
+    margin: 2em;
+    padding: 12px 25px;
+    font-size: 22px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    border: none;
+    background-color: #000000;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 5px 3px 5px rgba(0, 0, 0, 0.774);
+}
+
+.boton:hover {
+    background-color: #139f75;
+}

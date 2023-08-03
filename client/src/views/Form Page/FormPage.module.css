@@ -1,0 +1,57 @@
+/* Estilos para el formulario */
+.formContainer {
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo negro medio transparente */
+    padding: 20px;
+    border-radius: 10px;
+    width: 30em; /* Ajusta el ancho según tus necesidades */
+    margin: 0 auto; /* Centra el formulario horizontalmente */
+    border: 0.2em solid white;
+  }
+  
+  /* Estilos para los contenedores internos */
+  .container {
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo negro más oscuro */
+    padding:1em 2em;
+    width: 20em;
+    display: flex;
+    
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 0.2em solid white;
+  }
+  
+  /* Estilos para los elementos dentro de los contenedores */
+  .container label {
+    color: white; /* Color de texto blanco */
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .container input,
+  .container select {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid white; /* Borde blanco */
+    border-radius: 3px;
+    background-color: transparent;
+    color: white; /* Color de texto blanco */
+  }
+  
+  /* Estilos para el mensaje de error */
+  .container span {
+    color: red;
+  }
+  
+  /* Estilos para el botón */
+  .formContainer button {
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  

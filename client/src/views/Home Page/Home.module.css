@@ -1,0 +1,16 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .containerFilter {
+    background-color: black; 
+  }
+  
+  .containerCard {
+    width: 85%;
+  }
+  .containerFilter h1 {
+    color: white; 
+  }
