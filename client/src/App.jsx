@@ -13,7 +13,7 @@ import { Route, Routes, useLocation } from "react-router-dom"
         <Route exact path="/" element={<LandingPage />} />
         <Route path="/home" element={<HomePage />} />
         <Route exact path="/home/create" element={<FormPage />} />
-        <Route path="/home/detail" element={<DetailPage />} />
+        <Route path="/detail/:idPais" element={<DetailPage />} />
         <Route path="/home/about" element={<About />} />
       </Routes>
    

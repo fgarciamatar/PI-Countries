@@ -10,7 +10,7 @@ const NavBar = () => {
         <a href="https://github.com/fgarciamatar/PI-Countries">
           <img
             src="./../../../imagenes/tierra.png"
-            alt=""
+            alt="Logo Planeta"
             className={style.imagen}
           />
         </a>
@@ -18,6 +18,17 @@ const NavBar = () => {
         <h1> CountriesWeb</h1>
       </div>
       <div className={style.container2}>
+       
+        {pathname !== "/home" ? (
+          <Link to={"/home"}>
+             <img className={style.botonAtras} src={"./../../../imagenes/atras.png"} alt="boton atras" />
+          </Link>
+        ) : (
+          <Link to={"/home"}>
+             <img className={style.botonAtrasOff} src={"./../../../imagenes/atras.png"} alt="boton atras" />
+          </Link>
+        )}
+
         {pathname !== "/home" ? (
           <Link to={"/home"}>
             <button className={style.botonNav}>HOME</button>

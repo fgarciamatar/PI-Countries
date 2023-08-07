@@ -1,57 +1,59 @@
 /* Estilos para el formulario */
 .formContainer {
-    background-color: rgba(0, 0, 0, 0.5); /* Fondo negro medio transparente */
-    padding: 20px;
-    border-radius: 10px;
+    background-color: rgb(249, 249, 249); 
+    padding: 10px;
+    border-radius:1.5em;
     width: 30em; /* Ajusta el ancho según tus necesidades */
-    margin: 0 auto; /* Centra el formulario horizontalmente */
-    border: 0.2em solid white;
+    margin: 3em auto;
+    border: 0.2em solid rgb(0, 0, 0);
   }
   
   /* Estilos para los contenedores internos */
   .container {
-    background-color: rgba(0, 0, 0, 0.7); /* Fondo negro más oscuro */
+    margin: 3em auto;
+    background-color: rgb(255, 255, 255); 
     padding:1em 2em;
     width: 20em;
-    display: flex;
-    
     margin-bottom: 10px;
-    border-radius: 5px;
-    border: 0.2em solid white;
+    border-radius: 1.5em;
+    border: 0.2em solid rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
   }
   
   /* Estilos para los elementos dentro de los contenedores */
   .container label {
-    color: white; /* Color de texto blanco */
+    color: rgb(0, 0, 0);
     font-weight: bold;
     display: block;
     margin-bottom: 5px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   }
   
   .container input,
   .container select {
     width: 100%;
     padding: 5px;
-    border: 1px solid white; /* Borde blanco */
+    border: 1px solid rgb(0, 0, 0); 
     border-radius: 3px;
     background-color: transparent;
-    color: white; /* Color de texto blanco */
+    color: rgb(0, 0, 0); 
   }
+
   
   /* Estilos para el mensaje de error */
   .container span {
-    color: red;
+    color: rgb(8, 8, 8);
   }
   
   /* Estilos para el botón */
   .formContainer button {
-    background-color: white;
-    color: black;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
-    margin-top: 10px;
+    margin: 1em;
   }
   

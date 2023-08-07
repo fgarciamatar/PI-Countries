@@ -8,7 +8,7 @@
   
 }
 .container {
-    border: solid 4px rgba(0, 0, 0, 0.751);
+    border: solid 4px #139f75;
     display: flex;
     flex-direction:column;
     justify-content: center;
@@ -19,9 +19,8 @@
 
 h1{
     color: #0c0c0c;
-    font-size:xx-large;
+    font-size: 40px;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-   
 }
 .imagen {
     box-shadow: 5px 3px 5px rgba(250, 250, 250, 0.774);

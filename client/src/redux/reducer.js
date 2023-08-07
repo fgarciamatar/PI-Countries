@@ -1,6 +1,7 @@
 import { GET_COUNTRIES, GET_COUNTRY } from "./actions";
 const initialState = { 
-    countries:[]
+    countries:[],
+    country:[],
 };
 
 const rootReducer = (state=initialState, action) => {
@@ -8,7 +9,7 @@ const rootReducer = (state=initialState, action) => {
         case GET_COUNTRIES:
             return {...state, countries: action.payload}
             case GET_COUNTRY:
-            return {...state, countries: action.payload}
+            return {country: action.payload}
         default:
             return {...state};
     }
