@@ -19,6 +19,7 @@ const countriesLoader = async (Country) => {
             }
         })
        const countriesCreated = await Country.bulkCreate(countriesData);
+    //    console.log("se agregaron correctamente los countries a la BDD");
        return countriesCreated;
     } catch (error) {
         console.error("Error fetching data:",error);

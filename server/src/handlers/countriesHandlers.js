@@ -21,8 +21,9 @@ const  getCountryByID = async (req, res) => {
     //(No es necesario que sea una coincidencia exacta).
     //Debe poder buscarlo independientemente de mayúsculas o minúsculas
     //NIY: Obtiene el detalle de un Pais
-    const { idPais } = req.params; 
-    const paisCaps = idPais.toUpperCase();
+    const { countryId } = req.params; 
+    console.log(countryId);
+    const paisCaps = countryId.toUpperCase();
     try {
      const pais = await countryPorId(paisCaps);
      res.status(200).send(pais);
