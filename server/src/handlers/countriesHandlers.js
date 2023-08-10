@@ -1,13 +1,13 @@
 const { getAllCountries, getCountryByName, countryPorId } = require("../controllers/countriesControlers");
 const getCountries = async (req, res) => {
     try {  //   !! Tiene que incluir los datos de las actividades turísticas asociadas a este país.!!
-        const { nombre } = req.query;
-        if(!nombre){
+        const { name } = req.query;
+        if(!name){
             // NIY: Obtiene un arreglo de objetos, donde cada objeto es un país con toda su información.Utilizamos el método findAll() para obtener todos los países
             const paises = await getAllCountries(); // paises contendrá un arreglo de objetos, donde cada objeto es un país con toda su información
             res.status(200).send(paises)
         }else{
-            const paisByname = await getCountryByName(nombre)
+            const paisByname = await getCountryByName(name)
             res.status(200).send(paisByname);
         }
        
