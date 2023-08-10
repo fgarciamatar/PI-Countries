@@ -1,4 +1,3 @@
-import { NavLink } from "react-router-dom";
 import style from "./NavBar.module.css";
 import { Link, useLocation } from "react-router-dom";
 
@@ -14,18 +13,25 @@ const NavBar = () => {
             className={style.imagen}
           />
         </a>
-       
+
         <h1> CountriesWeb</h1>
       </div>
       <div className={style.container2}>
-       
         {pathname !== "/home" ? (
           <Link to={"/home"}>
-             <img className={style.botonAtras} src={"./../../../imagenes/atras.png"} alt="boton atras" />
+            <img
+              className={style.botonAtras}
+              src={"./../../../imagenes/atras.png"}
+              alt="boton atras"
+            />
           </Link>
         ) : (
           <Link to={"/home"}>
-             <img className={style.botonAtrasOff} src={"./../../../imagenes/atras.png"} alt="boton atras" />
+            <img
+              className={style.botonAtrasOff}
+              src={"./../../../imagenes/atras.png"}
+              alt="boton atras"
+            />
           </Link>
         )}
 

@@ -1,11 +1,22 @@
 .container {
     border: 1px solid black;
+    padding: 2em ;
+    background-image:url("../../../imagenes/Landing.jpg");
+    background-size: cover;
+    background-position: center;
     display: flex;
-    flex-direction: row;
-   flex-wrap: wrap;
+    flex-direction: column;
    justify-content: space-between;
-   padding: 2em ;
-   background-image:url("../../../imagenes/Landing.jpg");
-   background-size: cover;
-   background-position: center;
+}
+
+.containerCard {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.pagination {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
 }

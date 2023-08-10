@@ -1,0 +1,46 @@
+.container {
+  background-color: black;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Estilos para el input de búsqueda */
+.input {
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+/* Estilos para el botón */
+.button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #139f75;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/* Estilos para el título */
+h1 {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+/* Estilos para el select */
+select {
+width: 10em;
+padding: 0.5em 2em;
+  font-size: 16px;
+  border-radius: 5px;
+  margin-top: 0.8em;
+}

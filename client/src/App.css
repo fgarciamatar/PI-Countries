@@ -1,0 +1,9 @@
+
+body {
+    margin: 0;
+    padding:3%;
+    background-image:url("../../../imagenes/Landing.jpg");
+    background-size: cover;
+    background-position: center;
+  
+}

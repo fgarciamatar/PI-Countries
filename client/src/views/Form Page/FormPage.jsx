@@ -1,9 +1,12 @@
 import { useState } from "react";
+import { useSelector } from "react-redux";
 import style from "./FormPage.module.css";
 import axios from "axios";
 import validation from "./validation";
 
 const FormPage = () => {
+  const countries = useSelector((state) => state.countries);
+
   const [form, setForm] = useState({
     nombre: "",
     dificultad: "",
@@ -35,10 +38,10 @@ const FormPage = () => {
       .then((res) => alert(res.data))
       .catch((res) => alert(res.data));
   };
-
+  console.log(countries.nombre);
   return (
     <form onSubmit={submitHandler} className={style.formContainer}>
-      <div  className={style.container} >
+      <div className={style.container}>
         <h1>New Activity</h1>
       </div>
       <div className={style.container}>
@@ -72,7 +75,7 @@ const FormPage = () => {
         />
       </div>
       <div className={style.container}>
-        <label for="opciones">Temporada:</label>
+        <label>Temporada:</label>
         <select
           onChange={changeHandler}
           value={form.temporada}
@@ -85,13 +88,16 @@ const FormPage = () => {
         </select>
       </div>
       <div className={style.container}>
-        <label>Selecciona el Pais</label>
-        <input
-          type="text"
-          value={form.pais}
-          onChange={changeHandler}
-          name="pais"
-        />
+
+
+        <option value="" disabled>Selecciona el Pais</option>
+        <select onChange={changeHandler} value={form.pais} >
+
+        {countries?.map((pais) => {
+            <option key={pais.countryId} value={pais.countryId} name="pais"> {pais.nombre}</option>
+        })}
+
+        </select>
       </div>
       <button type="submit">SUBMIT</button>
     </form>

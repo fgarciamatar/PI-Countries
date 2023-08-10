@@ -9,7 +9,7 @@ const LandingPage = () => {
         <div className={style.container}>
             <h1>CountriesWeb</h1>
             <img className={style.imagen} src="../../../imagenes/tierra.png" alt="" />
-            <NavLink to="/home" className={style.boton}>Start</NavLink>
+            <NavLink to="/home" className={style.boton}>Acceder</NavLink>
        </div>
        </div>
     )

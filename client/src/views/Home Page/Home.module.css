@@ -5,7 +5,9 @@
   }
   
   .containerFilter {
+    margin: 0em;
     background-color: black; 
+    height: 53vw;
   }
   
   .containerCard {

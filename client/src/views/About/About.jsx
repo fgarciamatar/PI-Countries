@@ -10,7 +10,8 @@ const About = () => {
         En este sitio puede encontrar información sobre todos los países del
         mundo, y las actividades turísticas que pueden realizarse alli.
       </p>
-      {/* <span> Las funcionalidades de esta pagina web son: <span/> */}
+      <span> Las funcionalidades de esta pagina web son: </span>
+      <div className={style.funcionalidades}>
       <ul>
         <li> Mostrar información sobre países en la página de inicio.</li>
         <li>Filtrar los paises por nombre, alfabéticamente, etc.</li>
@@ -21,6 +22,8 @@ const About = () => {
           través de un formulario y almacena la información en una base de datos
         </li>
       </ul>
+      </div>
+     
       <span>Tecnologías Utlizadas:</span>
       <div className={style.tec}>
         <img

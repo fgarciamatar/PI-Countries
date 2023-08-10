@@ -1,8 +1,14 @@
+body{
+  background-image:url("../../../imagenes/Landing.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
 .container {
   margin: 20px 10%;
   padding: 20px;
   width: 80%;
-  background-color: rgba(0, 0, 0, 0.754);
+  background-color: rgba(0, 0, 0, 0.843);
   color: rgb(255, 255, 255);
   box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
   border: 0.2em solid rgb(220, 202, 202);
@@ -22,17 +28,20 @@
 }
 
 .container p,
-.container span,
-.container ul,
-h1 {
+.container span, h1 {
   font-size: 16px;
   line-height: 1.5;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
-.container ul li {
-  margin-bottom: 10px;
+.funcionalidades {
+   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+.funcionalidades li {
+  margin: 0.5em;
+  padding: 1em;
 }
 
 .tec {
