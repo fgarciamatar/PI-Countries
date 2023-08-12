@@ -20,13 +20,17 @@ module.exports = (sequelize) => {
       allowNull: false
     },
     duracion:{
-      type: DataTypes.TIME,
+      type: DataTypes.STRING,
       allowNull: false,
     },
     temporada:{
       type: DataTypes.ENUM('Verano', 'Otoño', 'Invierno', 'Primavera'),
     allowNull: false
-    }
+    },
+    countries:{
+      type: DataTypes.ARRAY(DataTypes.STRING),
+    allowNull: false
+    },
   },
   {timestamps: false}
   );

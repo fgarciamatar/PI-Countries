@@ -6,10 +6,10 @@ const postActivity = async (req, res) => {
   try {
        const { nombre, dificultad, duracion, temporada, countries} = req.body;
     
-      if (!nombre || !dificultad || !duracion || !temporada)res.status(400).send('Faltan datos de la actividad');
+      if (!nombre || !dificultad || !duracion || !temporada || !countries)res.status(400).send('Faltan datos de la actividad');
     
       // Crear la actividad en BD
-      const activityCreada = await createActivity({ nombre, dificultad, duracion, temporada});
+      const activityCreada = await createActivity({ nombre, dificultad, duracion, temporada, countries});
      // Obtener los países relacionados con la actividad a partir del array enviado en el body
       if (countries && countries.length > 0) {
             // Buscar los países en la base de datos por sus ids y agregarlos a la actividad
