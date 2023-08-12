@@ -5,14 +5,18 @@ import axios from "axios";
 import validation from "./validation";
 
 const FormPage = () => {
-  const countries = useSelector((state) => state.countries);
+  const stateCountries = useSelector((state) => state.countries);
 
   const [form, setForm] = useState({
     nombre: "",
     dificultad: "",
     duracion: "",
     temporada: "",
-    countries: "",
+    countries: [],
+  });
+
+  const [paisesData, setPaisesData] = useState({
+    countries: [],
   });
 
   const [errors, setErrors] = useState({
@@ -27,7 +31,7 @@ const FormPage = () => {
     const property = event.target.name;
     const value = event.target.value;
 
-    validation({ ...form, [property]: value });
+    setErrors(validation({ ...form, [property]: value }));
     setForm({ ...form, [property]: value });
   };
 
@@ -38,7 +42,38 @@ const FormPage = () => {
       .then((res) => alert(res.data))
       .catch((res) => alert(res.data));
   };
-  console.log(countries.nombre);
+
+  const handleSelectCountries = (event) => {
+    const selectedCountryId = event.target.value;
+
+    // Buscar el país seleccionado en la lista completa de países usando su ID
+    const selectedCountry = stateCountries.find(
+      (country) => country.countryId === selectedCountryId
+    );
+
+    if (selectedCountry) {
+      setForm({
+        ...form,
+        countries: [...form.countries, selectedCountryId],
+      });
+      setPaisesData({
+        ...paisesData,
+        countries: [...paisesData.countries, selectedCountry],
+      });
+
+      setErrors(
+        validation({
+          ...form,
+          countries: [...form.countries, selectedCountry],
+        })
+      );
+    }
+  };
+
+  
+  
+
+
   return (
     <form onSubmit={submitHandler} className={style.formContainer}>
       <div className={style.container}>
@@ -52,7 +87,7 @@ const FormPage = () => {
           onChange={changeHandler}
           name="nombre"
         />
-        {errors.nombre && <span>{errors.nombre}</span>}
+        {errors.nombre ? <span>{errors.nombre}</span> : null}
       </div>
       <div className={style.container}>
         <label>Dificultad</label>
@@ -64,6 +99,7 @@ const FormPage = () => {
           onChange={changeHandler}
           name="dificultad"
         />
+        {errors.dificultad ? <span>{errors.dificultad}</span> : null}
       </div>
       <div className={style.container}>
         <label>Duracion</label>
@@ -73,6 +109,7 @@ const FormPage = () => {
           onChange={changeHandler}
           name="duracion"
         />
+        {errors.duracion ? <span>{errors.duracion}</span> : null}
       </div>
       <div className={style.container}>
         <label>Temporada:</label>
@@ -86,20 +123,42 @@ const FormPage = () => {
           <option value="Invierno">Invierno</option>
           <option value="Primavera">Primavera</option>
         </select>
+        {errors.temporada ? <span>{errors.temporada}</span> : null}
       </div>
       <div className={style.container}>
-
-
-        <option value="" disabled>Selecciona el Pais</option>
-        <select onChange={changeHandler} value={form.pais} >
-
-        {countries?.map((pais) => {
-            <option key={pais.countryId} value={pais.countryId} name="pais"> {pais.nombre}</option>
-        })}
-
+        <option value="" disabled>
+          Selecciona el Pais
+        </option>
+        <select onChange={handleSelectCountries} value={form.pais}>
+          {stateCountries?.map((pais) => {
+            return (
+              <option
+                key={pais.countryId}
+                value={pais.countryId}
+                name={pais.nombre}
+              >
+                {pais.nombre}
+              </option>
+            );
+          })}
         </select>
+        {errors.countries ? <span>{errors.countries}</span> : null}
       </div>
-      <button type="submit">SUBMIT</button>
+        
+      <div className={style.ContainerCardPais}>
+      {paisesData.countries?.map((pais) => {
+        return (
+          <div key={pais.countryId} className={style.cardPais}>
+           
+            <h1>{pais.nombre}</h1>
+            <img src={pais.imagen} alt="" />
+          </div>
+        );
+      })}
+      </div>
+   
+
+      <button type="submit" className={style.botonSubmit}  onClick={() => onDeleteSelection(country)}>SUBMIT</button>
     </form>
   );
 };

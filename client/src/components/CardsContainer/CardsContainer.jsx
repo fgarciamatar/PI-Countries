@@ -1,10 +1,9 @@
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useState } from "react";
-import style from "./CardsContainer.module.css";
-import { useEffect } from "react";
 import { getCountries } from "../../redux/actions";
-import Pagination from "../Pagination/Pagination";
 import Card from "../Card/Card";
+import Pagination from "../Pagination/Pagination";
+import style from "./CardsContainer.module.css";
 //este componente renderiza cada Card
 
 const CardsContainer = () => {
