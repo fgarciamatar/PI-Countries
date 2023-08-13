@@ -4,7 +4,7 @@ const { getCountries, getCountryByID } = require("../handlers/countriesHandlers"
 const countriesRouter = Router();
 
 countriesRouter.get("/", getCountries),
-countriesRouter.get("/:countryId", getCountryByID)
+countriesRouter.get("/:id", getCountryByID)
 
 
 //****problema con la query

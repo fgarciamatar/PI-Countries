@@ -4,15 +4,14 @@ const { DataTypes } = require('sequelize');
 module.exports = (sequelize) => {
   // defino el modelo
   sequelize.define('Country', {
+    // id:{
+    //   type: DataTypes.INTEGER,
+    //   autoIncrement: true,
+    //   primaryKey: true
+    // },
     id:{
-      type: DataTypes.INTEGER,
-      autoIncrement: true,
-      primaryKey: true
-    },
-    countryId:{
       type: DataTypes.STRING(3),
-      allowNUll: false,
-      unique: true
+      primaryKey: true
     },
     nombre:{
       type: DataTypes.STRING,

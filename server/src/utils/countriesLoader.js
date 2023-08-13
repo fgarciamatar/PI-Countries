@@ -8,7 +8,7 @@ const countriesLoader = async (Country) => {
 
         const countriesData = countries.map((pais) => {
             return {
-                countryId:pais.cca3,
+                id:pais.cca3,
                 nombre: pais.name.common,
                 imagen: pais.flags.png,
                 continente: pais.continents[0],

@@ -3,7 +3,9 @@ const { Op } = require("sequelize");
 const { Country, Activity } = conn.models
 
 const getAllCountries = async () => {
-  const allCountries = await Country.findAll();
+  const allCountries = await Country.findAll({attributes: ["nombre","id","imagen","continente","poblacion"],
+include:[{model:Activity,attributes:["nombre"],through:{attributes:[]}}]
+});
   return allCountries;
 }
 
@@ -14,7 +16,7 @@ const getCountryByName = async (nombre) =>{
 
 const countryPorId = async (id) => {
    const country =  await Country.findOne({
-  where: {countryId: id},
+  where: {id: id},
   include: {
     model: Activity,
     attributes: ["nombre", "dificultad", "duracion", "temporada" ]

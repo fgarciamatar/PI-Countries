@@ -9,14 +9,14 @@ const postActivity = async (req, res) => {
       if (!nombre || !dificultad || !duracion || !temporada || !countries)res.status(400).send('Faltan datos de la actividad');
     
       // Crear la actividad en BD
-      const activityCreada = await createActivity({ nombre, dificultad, duracion, temporada, countries});
+    await createActivity({ nombre, dificultad, duracion, temporada, countries});
      // Obtener los países relacionados con la actividad a partir del array enviado en el body
-      if (countries && countries.length > 0) {
-            // Buscar los países en la base de datos por sus ids y agregarlos a la actividad
-            const countriesEncontrados = await getCountries(countries)
-            await activityCreada.addCountries(countriesEncontrados);
-        } 
-    res.status(200).json("Actividad Creada exitosamente");
+      // if (countries && countries.length > 0) {
+      //       // Buscar los países en la base de datos por sus ids y agregarlos a la actividad
+      //       const countriesEncontrados = await getCountries(countries)
+      //       await activityCreada.addCountries(countriesEncontrados);
+      //   } 
+     res.status(200).json("Actividad Creada exitosamente");
 
     } catch (error) {
   res.status(500).json({ error:`No se pudo crear la actividad:${error.message}`}); 
