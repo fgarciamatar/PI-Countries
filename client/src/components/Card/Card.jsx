@@ -1,14 +1,14 @@
 import style from "./Card.module.css"
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 //este componente Muestra la info de cada country y 
 //nos lleva al detail atraves de un Link
-const Cards = ({countryId, nombre, imagen, continente}) => {
+const Cards = ({id, nombre, imagen, continente}) => {
     return (
         <div className={style.container}>
             <img src={imagen} alt="" />
-            <NavLink to={`/detail/${countryId}`}>
+            <Link className={style.link} to={`/detail/${id}`}>
                 <h1>{nombre}</h1>
-            </NavLink>
+            </Link>
             <p>Continente: {continente}</p>
         </div>
     )

@@ -9,6 +9,7 @@
 
 /* Estilos para el input de búsqueda */
 .input {
+  margin-top: 0.5em;
   padding: 10px;
   font-size: 16px;
   border: none;

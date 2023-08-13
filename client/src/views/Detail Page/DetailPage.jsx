@@ -1,18 +1,21 @@
 import React, { useEffect } from "react"; // Asegúrate de importar React y useEffect
 import { useDispatch, useSelector } from "react-redux";
-import { getCountry } from "../../redux/actions";
+import { getCountry, getActivities} from "../../redux/actions";
 import { useParams } from "react-router-dom";
 
 import style from "./DetailPage.module.css";
 
 const DetailPage = () => {
   const dispatch = useDispatch();
-  const country = useSelector((state) => state.country); // Mueve la definición de 'country' aquí
+  const country = useSelector((state) => state.country); 
+  const activities = useSelector((state) => state.activities); 
   const { idPais } = useParams();
 
   useEffect(() => {
     dispatch(getCountry(idPais));
+    dispatch(getActivities());
   }, [dispatch, idPais]); // Agrega 'dispatch' e 'idPais' como dependencias
+
 
   return (
     <div className={style.container}>
@@ -21,7 +24,7 @@ const DetailPage = () => {
           {country.nombre}
         </h1>
         <img src={country.imagen} alt="" />
-        <p> {country.countryId}</p>
+        <p> {country.id}</p>
       </div>
       <div className={style.infoContainer}>
         <div className={style.info}>
@@ -45,7 +48,10 @@ const DetailPage = () => {
           <p>Poblacion: {country.poblacion}</p>
         </div>
       </div>
+
+      <p>{activities.nombre}</p>
     </div>
+
   );
 };
 

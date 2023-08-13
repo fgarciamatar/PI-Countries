@@ -1,14 +1,20 @@
 import style from "./Filter.module.css";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector} from "react-redux";
 import { useState } from 'react';
-import { filterByContinent, getCountryByName, alphabeticalOrder, populationOrder } from "./../../redux/actions"
+import { filterByContinent, filterByActivity, getCountryByName, alphabeticalOrder, populationOrder} from "./../../redux/actions"
 
 const Filter = () => {
+  const activities = useSelector((state) => state.activities);
+// console.log(activities);
   const dispatch = useDispatch();
   const [name, setName] = useState("");
   
   const handleFilterByContinent = (event) => {
     dispatch(filterByContinent(event.target.value))
+  }
+
+  const handleFilterByActivity = (event) => {
+    dispatch(filterByActivity(event.target.value))
   }
   
   const handleAlphabeticalOrder = (event) => {
@@ -41,6 +47,9 @@ const Filter = () => {
 
       <h1>Ordenar por Continente:</h1>
       <select onChange={handleFilterByContinent} name="Continente">
+      <option key="default" value="Todos">
+      Seleccione un Continente
+    </option>
         <option value="Todos">Todos</option>
         <option value="Africa">Africa</option>
         <option value="Asia">Asia</option>
@@ -48,28 +57,44 @@ const Filter = () => {
         <option value="South America">America del Sur</option>
         <option value="North America">America del Norte</option>
         <option value="Oceania">Oceania</option>
+        <option value="Antarctica">Antartida</option>
       </select>
 
 
       <h1>Ordenar Alfabeticamente:</h1>
       <select onChange={handleAlphabeticalOrder}>
+      <option key="default" value="seleccion">
+      Seleccione un Orden
+    </option>
       <option value="asc">A-Z</option>
       <option value="desc">Z-A</option>
       </select>
 
       <h1>Ordenar por poblacion:</h1>
       <select onChange={handlePopulationOrder}>
+      <option key="default" value="seleccion">
+      Seleccione un Orden
+    </option>
       <option value="mayor">Mayor Poblacion</option>
       <option value="menor">Menor Poblacion</option>
       </select>
 
-
-      <h1>Ordenar por Actividad:</h1>
-      <select>
-      <option value="">afas</option>
-      <option value="">asd</option>
-      </select>
-
+     <div className={style.container}>
+  <h1>Ordenar por Actividad</h1>
+  <select onChange={handleFilterByActivity} name="Orden por Actividad">
+    <option key="default" value="seleccion">
+      Seleccione una actividad
+    </option>
+    <option value="todos">Todos</option>
+    {activities?.map((actividad) => {
+      return (
+        <option key={actividad.id} value={actividad.nombre}>
+          {actividad.nombre}
+        </option>
+      );
+    })}
+  </select>
+</div>
 
       
     </div>

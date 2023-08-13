@@ -1,16 +1,18 @@
 import { useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import style from "./FormPage.module.css";
-import axios from "axios";
 import validation from "./validation";
+import { createActivity } from "../../redux/actions";
 
 const FormPage = () => {
-  const stateCountries = useSelector((state) => state.countries);
+  const stateCountries = useSelector((state) => state.allCountries);
+const dispatch = useDispatch();
+
 
   const [form, setForm] = useState({
     nombre: "",
-    dificultad: "",
-    duracion: "",
+    dificultad: 0,
+    duracion: 0,
     temporada: "",
     countries: [],
   });
@@ -29,26 +31,27 @@ const FormPage = () => {
 
   const changeHandler = (event) => {
     const property = event.target.name;
-    const value = event.target.value;
+    let value = event.target.value;
+
+    if(property === "duracion") value = +value;
+    if(property === "dificultad") value = +value;
 
     setErrors(validation({ ...form, [property]: value }));
     setForm({ ...form, [property]: value });
   };
 
-  const submitHandler = (event) => {
+  const submitHandler = async (event) => {
     event.preventDefault();
-    axios
-      .post("http://localhost:3001/activities", form)
-      .then((res) => alert(res.data))
-      .catch((res) => alert(res.data));
-  };
+   dispatch(createActivity(form))
+  }
+ 
 
   const handleSelectCountries = (event) => {
     const selectedCountryId = event.target.value;
 
     // Buscar el país seleccionado en la lista completa de países usando su ID
     const selectedCountry = stateCountries.find(
-      (country) => country.countryId === selectedCountryId
+      (country) => country.id === selectedCountryId
     );
 
     if (selectedCountry) {
@@ -70,9 +73,23 @@ const FormPage = () => {
     }
   };
 
-  
-  
+  // const onClose = (paisAEliminar) => {
+  //   const updatedCountries = paisesData.countries.filter(pais => pais.id !== paisAEliminar.id);
+  //   setPaisesData({ ...paisesData, countries: updatedCountries });
+   
+  // };
 
+  const onClose = (paisAEliminar) => {
+    const updatedFormCountries = form.countries.filter(
+      (countryId) => countryId !== paisAEliminar.id
+    );
+    const updatedPaisesData = paisesData.countries.filter(
+      (country) => country.id !== paisAEliminar.id
+    );
+
+    setForm({ ...form, countries: updatedFormCountries });
+    setPaisesData({ ...paisesData, countries: updatedPaisesData });
+  };
 
   return (
     <form onSubmit={submitHandler} className={style.formContainer}>
@@ -93,6 +110,7 @@ const FormPage = () => {
         <label>Dificultad</label>
         <input
           type="range"
+          // type="number"
           min="1"
           max="5"
           value={form.dificultad}
@@ -104,7 +122,9 @@ const FormPage = () => {
       <div className={style.container}>
         <label>Duracion</label>
         <input
-          type="time"
+          type="number"
+          min="1"
+          max="10"
           value={form.duracion}
           onChange={changeHandler}
           name="duracion"
@@ -126,15 +146,15 @@ const FormPage = () => {
         {errors.temporada ? <span>{errors.temporada}</span> : null}
       </div>
       <div className={style.container}>
-        <option value="" disabled>
-          Selecciona el Pais
-        </option>
+        <label>
+          Selecciona el Pais:
+        </label>
         <select onChange={handleSelectCountries} value={form.pais}>
           {stateCountries?.map((pais) => {
             return (
               <option
-                key={pais.countryId}
-                value={pais.countryId}
+                key={pais.id}
+                value={pais.id}
                 name={pais.nombre}
               >
                 {pais.nombre}
@@ -144,21 +164,22 @@ const FormPage = () => {
         </select>
         {errors.countries ? <span>{errors.countries}</span> : null}
       </div>
-        
-      <div className={style.ContainerCardPais}>
-      {paisesData.countries?.map((pais) => {
-        return (
-          <div key={pais.countryId} className={style.cardPais}>
-           
-            <h1>{pais.nombre}</h1>
-            <img src={pais.imagen} alt="" />
-          </div>
-        );
-      })}
-      </div>
-   
 
-      <button type="submit" className={style.botonSubmit}  onClick={() => onDeleteSelection(country)}>SUBMIT</button>
+      <div className={style.ContainerCardPais}>
+        {paisesData.countries?.map((pais) => {
+          return (
+            <div key={pais.id} className={style.cardPais}>
+              <button className={style.botonCerrar} value={pais.countries}   onClick={() => onClose(pais)}>X</button>
+              <h1>{pais.nombre}</h1>
+              <img src={pais.imagen} alt="" />
+            </div>
+          );
+        })}
+      </div>
+
+      <button type="submit" className={style.botonSubmit}>
+        SUBMIT
+      </button>
     </form>
   );
 };

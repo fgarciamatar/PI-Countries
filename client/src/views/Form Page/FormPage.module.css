@@ -1,6 +1,6 @@
 /* Estilos para el formulario */
 .formContainer {
-    background-color: rgb(249, 249, 249); 
+    background-color: rgba(249, 249, 249, 0.675); 
     padding: 10px;
     border-radius:1.5em;
     width: 30em; /* Ajusta el ancho según tus necesidades */
@@ -98,6 +98,7 @@
   font-size: 0.8em;
   margin-bottom: 5px;
 }
+
 
 .cardPais img {
  width:4em;

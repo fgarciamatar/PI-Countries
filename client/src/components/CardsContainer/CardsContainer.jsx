@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getCountries } from "../../redux/actions";
 import Card from "../Card/Card";
 import Pagination from "../Pagination/Pagination";
 import style from "./CardsContainer.module.css";
+import { getActivities } from "./../../redux/actions"
 //este componente renderiza cada Card
 
 const CardsContainer = () => {
@@ -12,18 +12,17 @@ const CardsContainer = () => {
 
   //Estados para el paginado
   const [loading, setLoading] = useState(false);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [countriesPerPage, setCountriesPerPage] = useState(10);
+  const [currentPage, setCurrentPage] = useState(0);
+  const countriesPerPage = 10;
 
-  //cuando se monta hace el dispatch para traer los paises
-  useEffect(() => {
-    setLoading(true);
-    dispatch(getCountries());
-    setLoading(false);
+
+  useEffect(() => { //cuando se renderiza CardsContainer -> el estado activities se carga con las actividades
+   dispatch(getActivities());
   }, []);
+ 
 
-  const indexOfLastCountry = currentPage * countriesPerPage;
-  const indexOfFirstCountry = indexOfLastCountry - countriesPerPage;
+  const  indexOfFirstCountry = currentPage * countriesPerPage;
+  const indexOfLastCountry = indexOfFirstCountry + countriesPerPage;
   const currentCountries = countries?.slice(
     indexOfFirstCountry,
     indexOfLastCountry
@@ -39,7 +38,7 @@ const CardsContainer = () => {
         {currentCountries.map((country) => {
           return (
             <Card
-              countryId={country.countryId}
+              id={country.id}
               nombre={country.nombre}
               imagen={country.imagen}
               continente={country.continente}
@@ -47,7 +46,7 @@ const CardsContainer = () => {
               subRegion={country.subRegion}
               area={country.area}
               poblacion={country.poblacion}
-              key={country.countryId}
+              key={country.id}
             />
           );
         })}
