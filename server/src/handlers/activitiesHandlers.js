@@ -19,7 +19,7 @@ const postActivity = async (req, res) => {
      res.status(200).json("Actividad Creada exitosamente");
 
     } catch (error) {
-  res.status(500).json({ error:`No se pudo crear la actividad:${error.message}`}); 
+  res.status(500).send({ error:`No se pudo crear la actividad`}); 
  }
 }
 
