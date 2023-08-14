@@ -45,7 +45,7 @@ const Filter = () => {
               Buscar
             </button>
 
-      <h1>Ordenar por Continente:</h1>
+      <h1>Filtrar por Continente:</h1>
       <select onChange={handleFilterByContinent} name="Continente">
       <option key="default" value="Todos">
       Seleccione un Continente
@@ -80,19 +80,22 @@ const Filter = () => {
       </select>
 
      <div className={style.container}>
-  <h1>Ordenar por Actividad</h1>
+  <h1>Filtrar por Actividad</h1>
   <select onChange={handleFilterByActivity} name="Orden por Actividad">
-    <option key="default" value="seleccion">
+    <option key="default"  value="todos">
       Seleccione una actividad
-    </option>
+    </option >
     <option value="todos">Todos</option>
-    {activities?.map((actividad) => {
-      return (
-        <option key={actividad.id} value={actividad.nombre}>
-          {actividad.nombre}
-        </option>
-      );
-    })}
+    {
+  Array.isArray(activities) ? 
+    activities.map((actividad) => (
+      <option key={actividad.id} value={actividad.nombre}>
+        {actividad.nombre}
+      </option>
+    )) 
+  : ""
+}
+
   </select>
 </div>
 

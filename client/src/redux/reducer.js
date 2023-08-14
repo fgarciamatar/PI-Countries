@@ -48,13 +48,12 @@ const rootReducer = (state = initialState, action) => {
        else return {...state, countries: paises} 
       
     case FILTER_BY_ACTIVITY:
-      activitiesCountries = state.countries.filter(country =>
+      const todosLosPaises = state.allCountries;
+      activitiesCountries = todosLosPaises.filter(country =>
         country.Activities.some(activity => activity.nombre === action.payload)
       );
-
-
-      console.log(activitiesCountries);
-      console.log(action.payload);
+      // console.log(activitiesCountries);
+      // console.log(state.countries);
       return action.payload === "todos"
         ? { ...state, countries: [...state.allCountries] }
         : {

@@ -2,11 +2,12 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import style from "./FormPage.module.css";
 import validation from "./validation";
-import { createActivity } from "../../redux/actions";
+import { useEffect } from "react";
+import { createActivity, getCountries } from "../../redux/actions";
 
 const FormPage = () => {
   const stateCountries = useSelector((state) => state.allCountries);
-const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
 
   const [form, setForm] = useState({
@@ -42,7 +43,8 @@ const dispatch = useDispatch();
 
   const submitHandler = async (event) => {
     event.preventDefault();
-   dispatch(createActivity(form))
+    if(errors === true) dispatch(createActivity(form));
+    else alert("No se pudo crear, por favor complete todo el formulario")
   }
  
 
@@ -72,12 +74,6 @@ const dispatch = useDispatch();
       );
     }
   };
-
-  // const onClose = (paisAEliminar) => {
-  //   const updatedCountries = paisesData.countries.filter(pais => pais.id !== paisAEliminar.id);
-  //   setPaisesData({ ...paisesData, countries: updatedCountries });
-   
-  // };
 
   const onClose = (paisAEliminar) => {
     const updatedFormCountries = form.countries.filter(

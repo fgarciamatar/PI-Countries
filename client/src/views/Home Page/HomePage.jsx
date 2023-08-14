@@ -1,16 +1,18 @@
-import { useEffect } from "react";
 import CardsContainer from "../../components/CardsContainer/CardsContainer";
 import Filter from "../../components/Filters/Filter";
 import style from "./Home.module.css";
-import {getCountries} from "./../../redux/actions"
 import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { getCountries } from "../../redux/actions";
 
 const HomePage = () => {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
-  useEffect(() => { //cuando se renderiza CardsContainer -> el estado activities se carga con las actividades
+
+  useEffect(() => { //cuando se renderiza Form -> el estado activities se carga con las actividades
     dispatch(getCountries())
-   }, [dispatch]);
+   }, []);
+
   return (
     <div className={style.container}>
       <div className={style.containerFilter}>

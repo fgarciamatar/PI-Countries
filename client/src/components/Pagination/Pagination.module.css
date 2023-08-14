@@ -1,8 +1,19 @@
-nav {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-  }
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.containerBotones {
+  display: flex;
+  flex-direction: row;
+
+}
+.containerPage {
+  display: flex;
+  flex-direction: row;
+}
   
   ul {
     list-style: none;
@@ -25,12 +36,30 @@ nav {
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   }
   
-  a:hover {
-    background-color: black;
-    color: white;
-  }
-  
-  
-  
-  
-  
+  .botonActivo {
+    height: 2.2rem;
+    margin: 0.2em;
+    background-color: rgba(255, 255, 255, 0.253);
+    border-radius: 5em;
+    border: 0.1em solid white;
+    &:hover{
+        border-radius: 2em;
+        background-color: #139f75;
+        box-shadow: 2px 2px 5px rgba(255, 255, 255, 0.9);
+        transition: background-color 0.2s ease-in-out;
+     }
+}
+
+.botonInactivo {
+  height: 2.2rem;
+  margin: 0.2em;
+  background-color: rgba(255, 255, 255, 0.253);
+  border-radius: 5em;
+  border: 0.1em solid white;
+}
+
+.active {
+  background-color: #ffffffba;
+  box-shadow: 2px 2px 5px rgba(255, 255, 255, 0.9);
+}
+

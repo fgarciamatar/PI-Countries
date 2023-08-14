@@ -21,6 +21,14 @@ const validation = (formState) => {
   if (formState.countries.length === 0)
     errors.countries = "Debe seleccionar al menos un país";
 
-  return errors;
+    const hasErrors = Object.keys(errors).length === 0;
+
+    if (hasErrors) {
+      return true; // No hay errores
+    } else {
+      return errors; // Devolver el objeto de errores
+    }
 };
 export default validation;
+
+

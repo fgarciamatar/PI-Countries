@@ -1,8 +1,14 @@
 import style from "./NavBar.module.css";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const NavBar = () => {
   const { pathname } = useLocation();
+  let navigate = useNavigate();
+
+  const handleBack = () => {
+    navigate(-1);
+  };
+
   return (
     <div className={style.container}>
       <div className={style.container2}>
@@ -18,13 +24,12 @@ const NavBar = () => {
       </div>
       <div className={style.container2}>
         {pathname !== "/home" ? (
-          <Link to={"/home"}>
-            <img
-              className={style.botonAtras}
-              src={"./../../../imagenes/atras.png"}
-              alt="boton atras"
-            />
-          </Link>
+          <img
+            className={style.botonAtras}
+            src={"./../../../imagenes/atras.png"}
+            alt="boton atras"
+            onClick={handleBack}
+          />
         ) : (
           <Link to={"/home"}>
             <img

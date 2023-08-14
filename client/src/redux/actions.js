@@ -60,7 +60,7 @@ export const createActivity = (payload) => {
         payload: activity,
       }) 
     } catch (error) {
-      console.error(error.message)
+      alert(`No se pudo crear la actividad`)
     }
     
   };
