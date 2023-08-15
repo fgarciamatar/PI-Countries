@@ -16,9 +16,14 @@ const DetailPage = () => {
     dispatch(getActivities());
   }, [dispatch, idPais]); // Agrega 'dispatch' e 'idPais' como dependencias
 
+  const countryActivities = activities.filter((activity) =>
+    activity.countries.includes(idPais)
+  );
+  console.log(countryActivities);
   console.log(activities);
   return (
-    <div className={style.container}>
+    <div className={style.containerGeneral}>
+      <div className={style.container}>
       <div className={style.bandera}>
         <h1>{country.nombre}</h1>
         <img src={country.imagen} alt="" />
@@ -46,8 +51,36 @@ const DetailPage = () => {
           <p>Poblacion: {country.poblacion}</p>
         </div>
       </div>
+      </div>
+        <h1>Actividades:</h1>
+      <div className={style.activitiesContainer}>
+        {countryActivities.length > 0 ? (
+          <>
+            {countryActivities.map(activity => (
+              <div key={activity.id}>
+                 <div className={style.info}>
+                 <img src={"./../../../imagenes/actividad.png"} alt="" />
+                <h2>{activity.nombre}</h2>
+                </div>
+                <div className={style.info}>
+                <img src={"./../../../imagenes/duracion.png"} alt="" />
+                <p>Duracion: {activity.duracion}hs</p>
+                </div>
+                <div className={style.info}>
+                <img src={"./../../../imagenes/dificultad.png"} alt="" />
+                <p>Dificultad: {activity.dificultad}</p>
+                </div>
+                <div className={style.info}>
+                <img src={"./../../../imagenes/temporada.png"} alt="" />
+                <p>Temporada: {activity.temporada} </p>
+                </div>
 
-      <p>{activities.nombre}</p>
+              </div>
+            ))}
+          </>
+        ) :  <p>No hay actividades disponibles para este pais</p>}
+      </div>
+      
     </div>
   );
 };

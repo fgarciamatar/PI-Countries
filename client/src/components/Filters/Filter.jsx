@@ -8,6 +8,7 @@ const Filter = () => {
 // console.log(activities);
   const dispatch = useDispatch();
   const [name, setName] = useState("");
+  const [searchValue, setSearchValue] = useState(''); //estado para el input de buscar por nombre
   
   const handleFilterByContinent = (event) => {
     dispatch(filterByContinent(event.target.value))
@@ -25,11 +26,13 @@ const Filter = () => {
   }
 
   const handleChange = (event)=>{
+    setSearchValue(event.target.value);
     setName(event.target.value);
   }
 
   const onSearch = () => {
     dispatch(getCountryByName(name))
+    setSearchValue('');
   }
 
   return (
@@ -39,6 +42,7 @@ const Filter = () => {
               type="search"
               placeholder="Nombre del Pais"
               className={style.input}
+              value={searchValue} //como valor asigno el estado local
               onChange={handleChange}
             />
               <button className={style.button} onClick={onSearch}>
@@ -78,7 +82,6 @@ const Filter = () => {
       <option value="mayor">Mayor Poblacion</option>
       <option value="menor">Menor Poblacion</option>
       </select>
-
      <div className={style.container}>
   <h1>Filtrar por Actividad</h1>
   <select onChange={handleFilterByActivity} name="Orden por Actividad">
