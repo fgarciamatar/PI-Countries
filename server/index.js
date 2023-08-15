@@ -4,7 +4,7 @@ const countriesLoader = require("./src/utils/countriesLoader")
 const PORT = 3001;
 
 const { Country } = conn.models
-
+//alter:true
 conn.sync({ force: true }).then(() => {
 server.listen(PORT, () => {
   countriesLoader(Country);
