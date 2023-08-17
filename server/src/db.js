@@ -3,7 +3,7 @@ const { Sequelize } = require("sequelize");
 
 const fs = require('fs');
 const path = require('path');
-const {
+const { //usuario , contraseña y host para acceder 
   DB_USER, DB_PASSWORD, DB_HOST,
 } = process.env;
 
@@ -31,8 +31,7 @@ sequelize.models = Object.fromEntries(capsEntries);
 
 const { Country, Activity } = sequelize.models;
 
-// Aca vendrian las relaciones
-// Product.hasMany(Reviews);
+// Aca vendrian las relaciones de muchos a muchos
 Country.belongsToMany(Activity,{through: "CountryActivity", foreignKey: "country_id"});
 Activity.belongsToMany(Country,{through: "CountryActivity", foreignKey: "activity_id"});
 

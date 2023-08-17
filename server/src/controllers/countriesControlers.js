@@ -10,11 +10,13 @@ include:[{model:Activity,attributes:["nombre"],through:{attributes:[]}}]
 }
 
 const getCountryByName = async (nombre) =>{
+  //trae el pais por nombre aunque este con minuscula o mayuscula
     const pais = await Country.findAll({where: {nombre:{ [Op.iLike]: `%${nombre}%`}}});
     return pais;
 }
 
 const countryPorId = async (id) => {
+  //traemos el pais que coincida el id
    const country =  await Country.findOne({
   where: {id: id},
   include: {

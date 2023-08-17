@@ -3,9 +3,7 @@ const { getCountries, getCountryByID } = require("../handlers/countriesHandlers"
 
 const countriesRouter = Router();
 
-countriesRouter.get("/", getCountries),
-countriesRouter.get("/:id", getCountryByID)
+countriesRouter.get("/", getCountries),//cuando hagamos un get a esta ruta se ejecutara  el handler getCountries
+countriesRouter.get("/:id", getCountryByID)//cuando hagamos un get a esta ruta se ejecutara  el handler getCountryByID
 
-
-//****problema con la query
 module.exports = countriesRouter;

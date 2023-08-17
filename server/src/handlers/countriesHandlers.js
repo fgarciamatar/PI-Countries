@@ -1,13 +1,14 @@
 const { getAllCountries, getCountryByName, countryPorId } = require("../controllers/countriesControlers");
-const getCountries = async (req, res) => {
-    try {  //   !! Tiene que incluir los datos de las actividades turísticas asociadas a este país.!!
-        const { name } = req.query;
-        if(!name){
+
+const getCountries = async (req, res) => {//Trae todos los paises 
+    try {  
+        const { name } = req.query; //recibimos el nombre por query
+        if(!name){ //si no hay query
             // NIY: Obtiene un arreglo de objetos, donde cada objeto es un país con toda su información.Utilizamos el método findAll() para obtener todos los países
             const paises = await getAllCountries(); // paises contendrá un arreglo de objetos, donde cada objeto es un país con toda su información
             res.status(200).send(paises)
-        }else{
-            const paisByname = await getCountryByName(name)
+        }else{ //si hay query
+            const paisByname = await getCountryByName(name)//traemos solo el pais por nombre
             res.status(200).send(paisByname);
         }
        
@@ -17,15 +18,11 @@ const getCountries = async (req, res) => {
       }
 }
 const  getCountryByID = async (req, res) => {
-    //Esta ruta debe obtener todos aquellos países que coinciden con el nombre recibido por query. 
-    //(No es necesario que sea una coincidencia exacta).
-    //Debe poder buscarlo independientemente de mayúsculas o minúsculas
     //NIY: Obtiene el detalle de un Pais
-    const { id } = req.params; 
-    console.log(id);
-    const paisCaps = id.toUpperCase();
+    const { id } = req.params;  //recibimos el id por params
+    const paisCaps = id.toUpperCase(); //mayuscula
     try {
-     const pais = await countryPorId(paisCaps);
+     const pais = await countryPorId(paisCaps);//controller countryPorId
      res.status(200).send(pais);
     } catch (error) {
         res.status(500).json({ error:` No se encontraron países con ese código: ${error.message}` }); 
