@@ -1,32 +1,33 @@
-
+/* Estilos generales */
 .background {
     margin: 0;
-    padding:3%;
-    background-image:url("../../../imagenes/Landing.jpg");
+    padding: 3%;
+    background-image: url("../../../imagenes/Landing.jpg");
     background-size: cover;
     background-position: center;
-  
 }
+
 .container {
     border: solid 4px #139f75;
     display: flex;
-    flex-direction:column;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 85vh;
     margin: 0;
+    padding: 1rem; /* Añadido para espacio interno en dispositivos móviles */
 }
 
-h1{
+h1 {
     color: #0c0c0c;
-    font-size: 5em;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    
+    font-size: 3em; /* Reducido el tamaño para dispositivos móviles */
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
+
 .imagen {
     box-shadow: 5px 3px 5px rgba(250, 250, 250, 0.774);
     border-radius: 5em;
-    background-color:#ffffff;
+    background-color: #ffffff;
     height: 10rem;
     padding: 0em;
 	margin: 0em;
@@ -34,11 +35,11 @@ h1{
 
 .boton {
     text-decoration: none;
-    width: 5em;
-    margin: 2em;
-    padding: 12px 25px;
-    font-size: 22px;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    width: auto; /* Ancho automático para ajustar al contenido */
+    margin: 1em 0; /* Añadido espacio vertical */
+    padding: 8px 20px; /* Ajustado el padding */
+    font-size: 18px; /* Reducido el tamaño para dispositivos móviles */
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     text-align: center;
     border: none;
     background-color: #000000;
@@ -52,4 +53,45 @@ h1{
 .boton:hover {
     background-color: #139f75;
     box-shadow: 5px 3px 5px rgba(250, 250, 250, 0.774);
+}
+
+/* Estilos para tabletas */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5em;
+    }
+}
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    .imagen {
+    /* Reducido el tamaño para dispositivos móviles */
+    width: 30%;
+    height: 6em;
+    }
+
+    .boton {
+        font-size: 16px;
+        padding: 6px 15px;
+    }
+}
+@media (max-width: 250px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    .imagen {
+    /* Reducido el tamaño para dispositivos móviles */
+    width: 40%;
+    height: 4.5em;
+    }
+
+    .boton {
+        font-size: 16px;
+        padding: 6px 15px;
+    }
 }

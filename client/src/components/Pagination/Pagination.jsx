@@ -7,7 +7,7 @@ const Pagination = ({
   paginate,
 }) => {
   //recibimos todo por props
-  const pageNumbers = [];
+  const pageNumbers = [];//array que va guardando los indices de las paginas
   let totalPaginas = Math.ceil(totalCountries / countriesPerPage) - 1;
   for (let i = 0; i <= totalPaginas ; i++) {
     //                numero entero(  250         /     10     ) = 25paginas, recorremos cada pagina

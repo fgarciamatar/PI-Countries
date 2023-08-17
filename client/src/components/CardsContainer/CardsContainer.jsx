@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Card from "../Card/Card";
 import Pagination from "../Pagination/Pagination";
+import { getActivities } from "./../../redux/actions";
 import style from "./CardsContainer.module.css";
-import { getActivities } from "./../../redux/actions"
 //este componente renderiza cada Card
 
 const CardsContainer = () => {
@@ -11,7 +11,6 @@ const CardsContainer = () => {
   const dispatch = useDispatch();
 
   //Estados para el paginado
-  // const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(0); //estado local para guardar la pagina actual
   const countriesPerPage = 10; //Cantidad de Paises por pagina
 
@@ -22,10 +21,10 @@ const CardsContainer = () => {
  
 
   const  indexOfFirstCountry = currentPage * countriesPerPage; //indice del primer pais = pagina actual * cantidad de paises por pagina
-  const indexOfLastCountry = indexOfFirstCountry + countriesPerPage;//indice del ultimo pais = indice del prier pais + cant de paises por pagina
+  const indexOfLastCountry = indexOfFirstCountry + countriesPerPage;//indice del ultimo pais = indice del primer pais + cant de paises por pagina
   const currentCountries = countries?.slice(//currentCountries  = countries(estado global donde estan todos los paises)
     indexOfFirstCountry,  //aplicamos .slice (devuelve una copia de countries desde el indice del primer pais hasta el indice del ultimo pais)
-    indexOfLastCountry
+    indexOfLastCountry  //devuelve los primero 10 paises (de 0 a 9)
   );
 
   const paginate = (page) => {

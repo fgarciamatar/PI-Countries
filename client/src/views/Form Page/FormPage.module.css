@@ -107,20 +107,16 @@
   border-radius: 0.3em;
 }
 
-/* .botonCerrar {
-  margin: 0.2em;
-  position: absolute;
-  top: 0em;
-  right:0em;
+.botonCerrar {
+  margin: 0em;
   padding:0.2em 0.4em;
-  background-color: #000000; 
-  color: #fff; 
-  border: none;
+  background-color: #ffffff; 
+  color: #000000; 
   border-radius: 20%; 
   cursor: pointer;
-  font-size: 0.7em;
+  font-size: 0.6em;
   &:hover{
     background-color:#139f75;
    border: #000000 solid 0.1em;
   }
-} */
+}

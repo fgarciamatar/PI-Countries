@@ -20,8 +20,8 @@ const validation = (formState) => {
   //Paises
   if (formState.countries.length === 0)
     errors.countries = "Debe seleccionar al menos un país";
-
-    const hasErrors = Object.keys(errors).length === 0;
+//si hay errores los guarda en la propiedad adecuada a cada error
+    const hasErrors = Object.keys(errors).length === 0;//si el objeto errors tiene propiedades-->true, por lo tanto no habria errores
 
     if (hasErrors) {
       return true; // No hay errores

@@ -1,16 +1,15 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { createActivity } from "../../redux/actions";
 import style from "./FormPage.module.css";
 import validation from "./validation";
-import { useEffect } from "react";
-import { createActivity, getCountries } from "../../redux/actions";
 
 const FormPage = () => {
-  const stateCountries = useSelector((state) => state.allCountries);
+  const stateCountries = useSelector((state) => state.allCountries);//traemos el estado global alternativo
   const dispatch = useDispatch();
 
 
-  const [form, setForm] = useState({
+  const [form, setForm] = useState({//estado local para guardar lo escrito en  el formulario
     nombre: "",
     dificultad: 0,
     duracion: 0,
@@ -18,16 +17,16 @@ const FormPage = () => {
     countries: [],
   });
 
-  const [paisesData, setPaisesData] = useState({
+  const [paisesData, setPaisesData] = useState({//estado local para guardar los paises seleccionados y mostrarlos en un contenedor
     countries: [],
   });
 
-  const [errors, setErrors] = useState({
+  const [errors, setErrors] = useState({//estado local para guardar los errores que vienen de validation 
     nombre: "",
     dificultad: "",
     duracion: "",
     temporada: "",
-    countries: "",
+    countries: "", //si exite algun error estos se muestran en un span debajo de cada input correspondiente
   });
 
   const changeHandler = (event) => {
@@ -35,38 +34,38 @@ const FormPage = () => {
     let value = event.target.value;
 
     if(property === "duracion") value = +value;
-    if(property === "dificultad") value = +value;
+    if(property === "dificultad") value = +value;//convertimos duracion y dificultad en enteros
 
-    setErrors(validation({ ...form, [property]: value }));
-    setForm({ ...form, [property]: value });
+    setErrors(validation({ ...form, [property]: value }));// seteamos el error con lo que recibimos en la validation
+    setForm({ ...form, [property]: value });//seteamos el form
   };
 
-  const submitHandler = async (event) => {
+  const submitHandler = async (event) => {//al hacer clicl en el boton submit
     event.preventDefault();
-    if(errors === true) dispatch(createActivity(form));
-    else alert("No se pudo crear, por favor complete todo el formulario")
+    if(errors === true) dispatch(createActivity(form)); //si errors no tiene errores dispatcha createActivity (crea la nueva actividad en la BDD)
+    else alert("No se pudo crear, por favor complete todo el formulario")//si hay errores en errors , se lanza un alert
   }
  
 
-  const handleSelectCountries = (event) => {
-    const selectedCountryId = event.target.value;
+  const handleSelectCountries = (event) => {//funcion para seleccionar un pais
+    const selectedCountryId = event.target.value; //tomamos el/los pais/es seleccionado
 
     // Buscar el país seleccionado en la lista completa de países usando su ID
     const selectedCountry = stateCountries.find(
       (country) => country.id === selectedCountryId
     );
 
-    if (selectedCountry) {
-      setForm({
+    if (selectedCountry) { //si se encontraron paises...
+      setForm({//agregamos a form  countries el pais  seleccionado
         ...form,
         countries: [...form.countries, selectedCountryId],
       });
-      setPaisesData({
+      setPaisesData({//agregamos a paisesData  countries el pais  seleccionado
         ...paisesData,
         countries: [...paisesData.countries, selectedCountry],
       });
 
-      setErrors(
+      setErrors(//agregamos a errors  countries el pais  seleccionado , para validarlo
         validation({
           ...form,
           countries: [...form.countries, selectedCountry],
@@ -75,16 +74,16 @@ const FormPage = () => {
     }
   };
 
-  const onClose = (paisAEliminar) => {
+  const onClose = (paisAEliminar) => {//funcion para cerrarla tarjeta del pais seleccionado
     const updatedFormCountries = form.countries.filter(
-      (countryId) => countryId !== paisAEliminar.id
+      (countryId) => countryId !== paisAEliminar.id //recorremos countries en el form y filtramos si: countryId === al id del pais a eliminar
     );
     const updatedPaisesData = paisesData.countries.filter(
-      (country) => country.id !== paisAEliminar.id
+      (country) => country.id !== paisAEliminar.id//recorremos countries en paisesData y filtramos si: country.Id === al id del pais a eliminar
     );
 
-    setForm({ ...form, countries: updatedFormCountries });
-    setPaisesData({ ...paisesData, countries: updatedPaisesData });
+    setForm({ ...form, countries: updatedFormCountries });//modificamos form con la actualizacion de form (sacando el pais eliminado)
+    setPaisesData({ ...paisesData, countries: updatedPaisesData });//modificamos paisesData con la actualizacion de paisesData (sacando el pais eliminado)
   };
 
   return (

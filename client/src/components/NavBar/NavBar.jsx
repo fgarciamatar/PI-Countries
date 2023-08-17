@@ -2,11 +2,11 @@ import style from "./NavBar.module.css";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const NavBar = () => {
-  const { pathname } = useLocation();
-  let navigate = useNavigate();
+  const { pathname } = useLocation(); //ruta actual 
+  let navigate = useNavigate(); //hook de react para navegar entre las rutas
 
   const handleBack = () => {
-    navigate(-1);
+    navigate(-1);//vuelve a la ruta anterior 
   };
 
   return (
@@ -51,7 +51,7 @@ const NavBar = () => {
         )}
         {pathname !== "/home/create" ? (
           <Link to={"/home/create"}>
-            <button className={style.botonNav}>CREATE ACTIVITY</button>
+            <button className={style.botonNav}>CREAR ACTIVIDAD</button>
           </Link>
         ) : (
           <Link to={"/home/create"}>

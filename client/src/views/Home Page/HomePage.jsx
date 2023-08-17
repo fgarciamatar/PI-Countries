@@ -9,7 +9,7 @@ const HomePage = () => {
   const dispatch = useDispatch();
 
 
-  useEffect(() => { //cuando se renderiza Form -> el estado activities se carga con las actividades
+  useEffect(() => { //cuando se renderiza Home -> se distpacha getCountries --> guarda los paises en el estado global, countries
     dispatch(getCountries())
    }, []);
 

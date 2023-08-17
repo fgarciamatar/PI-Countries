@@ -1,26 +1,25 @@
-import React, { useEffect } from "react"; // Asegúrate de importar React y useEffect
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getCountry, getActivities } from "../../redux/actions";
 import { useParams } from "react-router-dom";
-
+import { getActivities, getCountry } from "../../redux/actions";
 import style from "./DetailPage.module.css";
 
 const DetailPage = () => {
   const dispatch = useDispatch();
-  const country = useSelector((state) => state.country);
-  const activities = useSelector((state) => state.activities);
-  const { idPais } = useParams();
+  const country = useSelector((state) => state.country); //traemos el estado global country a la variable country
+  const activities = useSelector((state) => state.activities);//traemos el estado global activities a la variable activities
+  const { idPais } = useParams(); //traemos el params idPais de la url
 
-  useEffect(() => {
-    dispatch(getCountry(idPais));
-    dispatch(getActivities());
-  }, [dispatch, idPais]); // Agrega 'dispatch' e 'idPais' como dependencias
+  useEffect(() => { //se ejecutara cuando el componente se haya renderizado
+    dispatch(getCountry(idPais)); //dispatch a getCountry pasandole idPais(guarda los paises en el estado global)
+    dispatch(getActivities());//dispatch a getActivities (guarda las acividades en el estado global)
+  }, [dispatch, idPais]); // se ejecutará cuando cambie el valor de dispatch o idPais.
 
   const countryActivities = activities.filter((activity) =>
-    activity.countries.includes(idPais)
+    activity.countries.includes(idPais)//filtramos las actividades ,si actividad.countries tiene el idPais(pasado ppor params)
   );
-  console.log(countryActivities);
-  console.log(activities);
+  // console.log(countryActivities);
+  // console.log(activities);
   return (
     <div className={style.containerGeneral}>
       <div className={style.container}>

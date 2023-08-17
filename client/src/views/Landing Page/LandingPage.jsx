@@ -14,5 +14,5 @@ const LandingPage = () => {
        </div>
     )
 }
-
+//img tiene un NavLink que dirige a home
 export default LandingPage;
