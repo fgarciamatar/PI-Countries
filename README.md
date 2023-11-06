@@ -10,12 +10,36 @@ Proyecto llevado a cabo como parte del programa de formación en Henry. Se trata
 
 
 ## **📁 INSTRUCCIONES**
+## Como Correr el Proyecto:
 
-1. Deberás forkear este repositorio para tener una copia del mismo en tu cuenta personal de GitHub.
+1. Clona este repositorio en tu máquina local:
+   ```
+git clone https://github.com/fgarciamatar/PI-Countries.git
+   ```
 
-2. Clona el repositorio en tu computadora para comenzar a trabajar. Este repositorio contiene un **`BoilerPlate`** con la estructura general del proyecto, tanto del servidor como del cliente. El boilerplate cuenta con dos carpetas: **`api`** y **`client`**. En estas carpetas estará el código del back-end y el front-end respectivamente.
+2. Navega a las carpetas client y server del proyecto:
+   ```
+   cd client
+   cd server
+   ```
 
-3. En la carpeta **`api`** deberás crear un archivo llamado: **`.env`** que tenga la siguiente forma:
+3. Instala las dependencias necesarias:
+   ```
+   npm install
+   ```
+
+4. Ejecuta el servidor de desarrollo:
+   ```
+//client
+   npm run dev
+//server
+npm start
+   ```
+
+
+El sitio web estará disponible en   ➜  Local:   http://localhost:5173/    en su navegador web.
+
+5.En la carpeta **`api`** deberás crear un archivo llamado: **`.env`** que tenga la siguiente forma:
 
    ```env
        DB_USER=usuariodepostgres
@@ -23,12 +47,10 @@ Proyecto llevado a cabo como parte del programa de formación en Henry. Se trata
        DB_HOST=localhost
    ```
 
-4. Reemplazar **`usuariodepostgres`** y **`passwordDePostgres`** con tus propias credenciales para conectarte a postgres. Este archivo va ser ignorado en la subida a github, ya que contiene información sensible (las credenciales).
+6. Reemplazar **`usuariodepostgres`** y **`passwordDePostgres`** con tus propias credenciales para conectarte a postgres. Este archivo va ser ignorado en la subida a github, ya que contiene información sensible (las credenciales).
 
-5. Adicionalmente será necesario que crees, **desde psql (shell o PGAdmin)**, una base de datos llamada **`countries`**. Si no realizas este paso de manera manual no podrás avanzar con el proyecto.
-6. npm install en la carpeta client y back end
-7. npm start en la carpeta back end
-8. npm run dev en la carpeta front end
+7. Adicionalmente será necesario que crees, **desde psql (shell o PGAdmin)**, una base de datos llamada **`countries`**. Si no realizas este paso de manera manual no podrás avanzar con el proyecto.
+
 
 <br />
 
