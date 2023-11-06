@@ -10,48 +10,58 @@ Proyecto llevado a cabo como parte del programa de formación en Henry. Se trata
 
 
 ## **📁 INSTRUCCIONES**
+Aquí tienes el texto con los incisos y el código con formato de código:
+
 ## Como Correr el Proyecto:
 
 1. Clona este repositorio en tu máquina local:
-
-   ```
-git clone https://github.com/fgarciamatar/PI-Countries.git
+   
+   ```shell
+   git clone https://github.com/fgarciamatar/PI-Countries.git
    ```
 
 2. Navega a las carpetas client y server del proyecto:
-   ```
+   
+   ```shell
    cd client
    cd server
    ```
 
 3. Instala las dependencias necesarias:
-   ```
+   
+   ```shell
    npm install
    ```
 
 4. Ejecuta el servidor de desarrollo:
-   ```
-//client
+
+   - Para el cliente (frontend):
+
+   ```shell
+   cd client
    npm run dev
-//server
-npm start
    ```
 
+   - Para el servidor (backend):
 
-El sitio web estará disponible en   ➜  Local:   http://localhost:5173/    en su navegador web.
+   ```shell
+   cd server
+   npm start
+   ```
 
-5.En la carpeta **`api`** deberás crear un archivo llamado: **`.env`** que tenga la siguiente forma:
+El sitio web estará disponible en: http://localhost:5173/ en tu navegador web.
+
+5. En la carpeta **`api`** deberás crear un archivo llamado: **`.env`** que tenga la siguiente forma:
 
    ```env
-       DB_USER=usuariodepostgres
-       DB_PASSWORD=passwordDePostgres
-       DB_HOST=localhost
+   DB_USER=usuariodepostgres
+   DB_PASSWORD=passwordDePostgres
+   DB_HOST=localhost
    ```
 
-6. Reemplazar **`usuariodepostgres`** y **`passwordDePostgres`** con tus propias credenciales para conectarte a postgres. Este archivo va ser ignorado en la subida a github, ya que contiene información sensible (las credenciales).
+6. Reemplaza **`usuariodepostgres`** y **`passwordDePostgres`** con tus propias credenciales para conectarte a postgres. Este archivo va a ser ignorado en la subida a GitHub, ya que contiene información sensible (las credenciales).
 
-7. Adicionalmente será necesario que crees, **desde psql (shell o PGAdmin)**, una base de datos llamada **`countries`**. Si no realizas este paso de manera manual no podrás avanzar con el proyecto.
-
+7. Adicionalmente, será necesario que crees, **desde psql (shell o PGAdmin)**, una base de datos llamada **`countries`**. Si no realizas este paso de manera manual, no podrás avanzar con el proyecto.
 
 <br />
 
