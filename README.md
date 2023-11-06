@@ -1,4 +1,7 @@
-  <img src="./countries.png" />
+
+![Captura de pantalla 2023-11-06 152319](https://github.com/fgarciamatar/PI-Countries/assets/101357034/7e377d06-1fa1-4cad-a5cd-4d796cefff8d)
+![Captura de pantalla 2023-11-06 152332](https://github.com/fgarciamatar/PI-Countries/assets/101357034/6d6ea518-b127-4f7c-951c-1574e3ac29af)
+
 
 # **COUNTRIES** | Proyecto Individual
 
