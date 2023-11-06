@@ -13,10 +13,11 @@ Proyecto llevado a cabo como parte del programa de formación en Henry. Se trata
 ## Como Correr el Proyecto:
 
 1. Clona este repositorio en tu máquina local:
+
    ```
 git clone https://github.com/fgarciamatar/PI-Countries.git
    ```
-   ```
+
 2. Navega a las carpetas client y server del proyecto:
    ```
    cd client
