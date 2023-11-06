@@ -16,7 +16,7 @@ Proyecto llevado a cabo como parte del programa de formación en Henry. Se trata
    ```
 git clone https://github.com/fgarciamatar/PI-Countries.git
    ```
-
+   ```
 2. Navega a las carpetas client y server del proyecto:
    ```
    cd client
