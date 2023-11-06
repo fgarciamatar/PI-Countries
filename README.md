@@ -1,4 +1,4 @@
-![HenryLogo](https://d31uz8lwfmyn8g.cloudfront.net/Assets/logo-henry-white-lg.png)
+  <img src="./countries.png" />
 
 # **COUNTRIES** | Proyecto Individual
 
@@ -13,40 +13,31 @@
 
 <br />
 
----
+## **📖 ENUNCIADO GENERAL**
 
-## **⏱ HORARIOS Y FECHAS**
+La idea de este proyecto es construir una aplicación web a partir de la API [**countries**] en la que se pueda:
 
-El proyecto individual tiene una duración máxima de tres semanas. Se inicia la primera semana con un Kick-Off, y se agendará una corrección personalizada la última semana.
+-  Buscar países.
+-  Visualizar la información de los países.
+-  Filtrarlos.
+-  Ordenarlos.
+-  Crear actividades turísticas.
 
-En el caso de completar todas las tareas antes de dicho lapso se podrá avisar a su instructor para coordinar una fecha de presentación del trabajo (DEMO).
+⚠️ Para las funcionalidades de filtrado y ordenamiento NO se puede utilizar los endpoints de la API externa que ya devuelven los resultados filtrados u ordenados.
 
-<br />
+### **Único end-point que se puede utilizar**
 
----
-
-## **⚠️ IMPORTANTE**
-
-Es necesario contar minimamente con la última versión estable de NodeJS y NPM. Asegúrate de contar con ella para poder instalar correctamente las dependecias necesarias para correr el proyecto. Actualmente las versiónes necesarias son:
-
--  **Node**: 12.18.3 o mayor
--  **NPM**: 6.14.16 o mayor
-
-Para verificar que versión tienes instalada:
-
-```bash
-node -v
-npm -v
-```
-
-
-Está permitido, **bajo tu responsabilidad**, actualizar las dependencias a versiones más actuales si lo deseas. Versiones mas actuales podrían presentar configuraciones diferentes respecto a las versiones en las que venimos trabajando durante el bootcamp.
-
-### **⛔️ Está rotundamente prohibido utilizar librerías externas para aplicar estilos a la SPA. Tendrás que utilizar CSS mediante algunas de las opciones vistas en el bootcamp (CSS, Legacy, Inline Styling, CSS Modules o Styled Components).**
+-  [**http://localhost:5000/countries**]
 
 <br />
 
 ---
+
+<div align="center">
+
+---
+
+
 ## **📋 SOBRE LA API**
 
 En este proyecto la API de Countries **correrá localmente desde tu computadora**. De esta manera, siempre tendrás disponible los datos de forma local para poder realizar tu proyecto.
@@ -80,12 +71,6 @@ Podrás ver el siguiente mensaje en tu terminal.
 
 Esto significa que la API ya está corriendo en tu computadora en el puerto 5000. Es decir que podrás acceder a ella desde la URL **`http://localhost:5000`**. Para poder comunicarte con esta API deberás dejar la terminal levantada.
 
-**IMPORTANTE**
-No debes modificar **NINGÚN** archivo dentro de la carpeta **`/server/api`**. Cualquier modificación en estos archivos puede alterar el funcionamiento normal de la API y de tu proyecto.
-
-<br />
-
----
 
 
 ## **📋 PARA COMENZAR...**
@@ -110,27 +95,7 @@ No debes modificar **NINGÚN** archivo dentro de la carpeta **`/server/api`**. C
 
 ---
 
-## **📖 ENUNCIADO GENERAL**
 
-La idea de este proyecto es construir una aplicación web a partir de la API [**countries**] en la que se pueda:
-
--  Buscar países.
--  Visualizar la información de los países.
--  Filtrarlos.
--  Ordenarlos.
--  Crear actividades turísticas.
-
-⚠️ Para las funcionalidades de filtrado y ordenamiento NO se puede utilizar los endpoints de la API externa que ya devuelven los resultados filtrados u ordenados.
-
-### **Único end-point que se puede utilizar**
-
--  [**http://localhost:5000/countries**]
-
-<br />
-
----
-
-<div align="center">
 
 ## **📁 INSTRUCCIONES**
 
@@ -266,18 +231,6 @@ Este formulario debe ser **controlado completamente con JavaScritp**. No se pued
 
 <br />
 
-### **🖱 TESTING**
 
-Ten en cuenta que en esta instancia no es obligatorio el desarrollo de testing para tu aplicación. De igual manera, te desafiamos a que los hagas, ¡ya que suman puntos!
 
--  Al menos tener un componente del frontend con sus tests respectivos.
--  Al menos tener dos rutas del backend con sus tests respectivos.
--  Al menos tener un modelo de la base de datos con sus tests respectivos.
 
-<br />
-
----
-
-<br />
-
-  <img src="./countries.png" />
