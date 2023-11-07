@@ -12,16 +12,16 @@ const About = () => {
       </p>
       <span> Las funcionalidades de esta pagina web son: </span>
       <div className={style.funcionalidades}>
-      <ul>
-        <li> Mostrar información sobre países en la página de inicio.</li>
-        <li>Filtrar los paises por nombre, alfabéticamente, etc.</li>
-        <li> Buscar un pais por ID o Nombre.</li>
-        <li>Mostrar detalles sobre cada país.</li>
-        <li>
-          Crear actividades turísticas que puedes realizar en uno o más países a
+   
+        <span> •Mostrar información sobre países en la página de inicio.</span> <br />
+        <span> •Filtrar los paises por nombre, alfabéticamente, etc.</span> <br />
+        <span>  •Buscar un pais por ID o Nombre.</span> <br />
+        <span> •Mostrar detalles sobre cada país.</span> <br />
+        <span>
+        •Crear actividades turísticas que puedes realizar en uno o más países a
           través de un formulario y almacena la información en una base de datos
-        </li>
-      </ul>
+        </span>
+   
       </div>
      
       <span>Tecnologías Utlizadas:</span>

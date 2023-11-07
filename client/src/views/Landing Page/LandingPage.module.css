@@ -1,4 +1,3 @@
-/* Estilos generales */
 .background {
     margin: 0;
     padding: 3%;
@@ -13,32 +12,32 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 85vh;
     margin: 0;
-    padding: 1rem; /* Añadido para espacio interno en dispositivos móviles */
+    height: 85vh;
 }
 
-h1 {
-    color: #0c0c0c;
-    font-size: 3em; /* Reducido el tamaño para dispositivos móviles */
+.container h1 {
+    color: #ffffff;
+    font-size: 2em; 
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .imagen {
     box-shadow: 5px 3px 5px rgba(250, 250, 250, 0.774);
-    border-radius: 5em;
+    border-radius: 50%; /* Hacer la imagen redonda */
     background-color: #ffffff;
-    height: 10rem;
+    width: 8rem; /* Cambiado a ancho en lugar de altura */
+    height: 8rem; /* Mantenido el alto */
     padding: 0em;
-	margin: 0em;
+    margin: 0em auto;
 }
 
 .boton {
     text-decoration: none;
     width: auto; /* Ancho automático para ajustar al contenido */
     margin: 1em 0; /* Añadido espacio vertical */
-    padding: 8px 20px; /* Ajustado el padding */
-    font-size: 18px; /* Reducido el tamaño para dispositivos móviles */
+    padding: 6px 18px; /* Ajustado el padding */
+    font-size: 1.3em; /* Reducido el tamaño para dispositivos móviles */
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     text-align: center;
     border: none;
@@ -55,43 +54,37 @@ h1 {
     box-shadow: 5px 3px 5px rgba(250, 250, 250, 0.774);
 }
 
-/* Estilos para tabletas */
+/* Media query para dispositivos móviles */
 @media (max-width: 768px) {
-    h1 {
-        font-size: 2.5em;
-    }
-}
 
-/* Estilos para dispositivos móviles */
-@media (max-width: 480px) {
-    h1 {
-        font-size: 2em;
+    .background {
+        margin: 0;
+        padding: 3%;
+        background-image: url("../../../imagenes/Landing.jpg");
+        background-size: cover;
+        background-position: center;
     }
 
-    .imagen {
-    /* Reducido el tamaño para dispositivos móviles */
-    width: 30%;
-    height: 6em;
+    .container{
+        border: solid 1px #139f75;
+        width: 95%;
+        padding: 18em 0em;
+        display: flex;
+        margin: 0.1em ;
+        height: auto;
     }
 
-    .boton {
-        font-size: 16px;
-        padding: 6px 15px;
-    }
-}
-@media (max-width: 250px) {
-    h1 {
-        font-size: 2em;
+    .container h1 {
+        font-size:1.5em; 
     }
 
     .imagen {
-    /* Reducido el tamaño para dispositivos móviles */
-    width: 40%;
-    height: 4.5em;
+        margin: 1em;
+        width: 6rem; 
+        height: 6rem;
     }
 
     .boton {
-        font-size: 16px;
-        padding: 6px 15px;
+        font-size: 1.2em; 
     }
 }

@@ -7,9 +7,9 @@ const Cards = ({id, nombre, imagen, continente}) => {
         <div className={style.container}>
             <img src={imagen} alt="" />
             <Link className={style.link} to={`/detail/${id}`}>
-                <h1>{nombre.length > 22 ? `${nombre.substring(0, 22)}...` : nombre}</h1>
+            <h1 id="miTitulo" className="titulo-responsive">{nombre.length > 22 ? `${nombre.substring(0, 22)}...` : nombre}</h1>
             </Link>
-            <p>Continente: {continente}</p>
+            <p >Continente: {continente}</p>
         </div>
     )
 }

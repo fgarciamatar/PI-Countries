@@ -1,18 +1,56 @@
 .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .containerFilter {
+  display: flex;
+  align-items: center;
+  height: 100vh; /* 100% de la altura de la ventana */
+}
+
+.containerFilter {
+  margin-top: 0em;
+  background-color: black;
+  width: 30%; /* El 30% del ancho de la pantalla */
+}
+.containerCard {
+  margin-top: 4em;
+  flex-grow: 1; /* Ocupa el espacio restante */
+}
+
+.containerFilter h1 {
+  color: white;
+}
+
+@media (max-width: 800px) {
+  .container {
     margin: 0em;
-    background-color: black; 
-    height: 53vw;
+    display: flex;
+    flex-direction: row;
   }
-  
+  .containerFilter {
+    display: flex;
+    margin: 0em;
+    height: 100vw;
+    width: 45%;
+  }
+
   .containerCard {
-    width: 85%;
+    display: flex;
+    width: 55%;
   }
   .containerFilter h1 {
-    color: white; 
+    color: white;
   }
+
+  .containerFilterIcon {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.725);
+    top: 7%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+  }
+  .iconFilter {
+    color: white;
+    font-size: 1.5em;
+    margin-left: 6em;
+    margin-right: 6em;
+  }
+}

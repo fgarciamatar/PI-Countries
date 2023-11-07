@@ -53,12 +53,13 @@ export const createActivity = (payload) => {
       const response = await axios.post(
         `http://localhost:3001/activities`,
         payload); //hacemos un post mandandole la nueva actividad
-       alert(response.data); //no da la respuesta en un alert
       const activity = response.data;
+      alert("Actividad creada")
       return dispatch({
         type: CREATE_ACTIVITY,
         payload: activity,
       })  //returnamos la action type y la actividad creada
+      
     } catch (error) {
       alert(`No se pudo crear la actividad`)
     }

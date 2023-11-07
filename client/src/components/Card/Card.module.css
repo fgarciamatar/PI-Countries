@@ -1,5 +1,5 @@
 .container {
-    margin: 0.2em;
+  margin: 0.2em;
   width: 12rem;
   height: 15rem;
   background-color: rgba(0, 0, 0, 0.606);
@@ -36,5 +36,30 @@
     background-color: #139f7500;
     
   }
+
+  .titulo-responsive {
+    white-space: nowrap; /* Evita que el texto se divida en múltiples líneas */
+    overflow: hidden;    /* Oculta el texto que no cabe en el contenedor */
+    text-overflow: ellipsis; /* Agrega puntos suspensivos (...) cuando el texto se recorta */
+}
+}
+
+@media (max-width: 800px) {
+ .container{
+  margin: 0.2em;
+  width: 7.2rem;
+  height: 9.4rem;
+ }
+ .container h1 {
+  font-size: 0.8em;
+ }
+ .container p {
+  font-size: 0.5em;
+ }
+ .titulo-responsive {
+  white-space: normal; /* Restablece el comportamiento predeterminado del texto */
+  overflow: visible;  /* Restablece el comportamiento predeterminado del texto */
+  text-overflow: clip; /* Restablece el comportamiento predeterminado del texto */
+}
 
 }

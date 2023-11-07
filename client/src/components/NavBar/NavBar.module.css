@@ -1,83 +1,132 @@
+/* Estilos base */
 .container {
     display: flex;
     flex-direction: row;
-    justify-content:space-between;
-    background-color:  #000000;
+    justify-content: space-between;
+    background-color: #000000;
     padding: 0.5em;
     border-bottom: 0.1em solid rgb(255, 255, 255);
-}
-
-.botonNav {
+  }
+  
+  /* Estilos para los botones de navegación */
+  .botonNav {
     text-decoration: none;
     padding: 0.7em 1em;
-    border-radius:1em;
+    border-radius: 1em;
     margin: 0.3em 1em;
     background-color: rgb(254, 254, 254);
     color: rgb(0, 0, 0);
-    
-}
-.botonNav:hover {
+  }
+  
+  .botonNav:hover {
     background-color: #139f75;
     box-shadow: 1px 1px 5px rgba(255, 255, 255, 0.9);
-}
-.botonNavActive { /*PARA MOSTAR OTRO COLOR CUANDO ESTAMS EN DETERMINADA RUTA*/
+  }
+  
+  .botonNavActive {
     text-decoration: none;
     padding: 0.7em 1em;
-    border-radius:1em;
+    border-radius: 1em;
     margin: 0.3em 1em;
     background-color: #139f75;
     color: aliceblue;
     box-shadow: 1px 1px 5px rgba(255, 255, 255, 0.9);
   }
-
-.botonAtras {
+  
+  /* Estilos para el botón de retroceso */
+  .botonAtras {
     margin: 0.3em 1em;
     padding: 0em;
     height: 2.3em;
-    margin: 0.3em 1em;
     background-color: aliceblue;
     border-radius: 2.2em;
-}
-.botonAtras:hover {
+  }
+  
+  .botonAtras:hover {
     background-color: #139f75;
     box-shadow: 1px 1px 5px rgba(255, 255, 255, 0.9);
-}
-.botonAtrasOff{
+  }
+  
+  .botonAtrasOff {
     margin: 0.3em 1em;
     padding: 0em;
     height: 2.3em;
     margin: 0.3em 1em;
     border-radius: 2.2em;
     background-color: rgb(0, 0, 0);
-}
-
-.imagen {
+  }
+  
+  /* Estilos para la imagen del logo */
+  .imagen {
     height: 3rem;
     margin: 0em 0.8em;
     background-color: rgb(255, 255, 255);
     border-radius: 5em;
     border: 0.1em solid white;
-    &:hover{
-        border-radius: 2em;
-        background-color: #139f75;
-        box-shadow: 2px 2px 5px rgba(255, 255, 255, 0.9);
-        transition: background-color 1s ease-in-out;
-     }
-}
-h1{
-    font-size:1.2em;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+  
+  .imagen:hover {
+    border-radius: 2em;
+    background-color: #139f75;
+    box-shadow: 2px 2px 5px rgba(255, 255, 255, 0.9);
+    transition: background-color 1s ease-in-out;
+  }
+  
+  h1 {
+    font-size: 1.2em;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: rgb(255, 255, 255);
-   
-}
-
-.container2{
+  }
+  
+  .container2 {
     margin: 0 2em;
     display: flex;
     flex-direction: row;
-}
-
-.container2 h1 {
+  }
+  
+  .container2 h1 {
     position: relative;
     top: 6px;
-}
+  }
+  
+  /* Media query para pantallas más pequeñas */
+  @media (max-width: 768px) {
+    .containerResponsive {
+      display: flex;
+      flex-direction: column;
+      padding: 0em;
+      background-color: #000000;
+      align-items: center;
+      justify-content: center;
+      margin-right: 8em;
+      
+    }
+  
+    .container2 {
+      flex-direction: row;
+      align-items: center;
+      margin: 0.3em;
+    }
+  
+    .botonNav{
+        padding: 0.38em 0.5em;
+        border-radius: 1em;
+        margin: 0em;
+    }
+    .botonNavActive {
+        padding: 0.38em 0.5em;
+        border-radius: 1em;
+        margin: 0.5em;
+      
+      }
+   
+      .imagen {
+        height: 2rem;
+        margin: 0em;
+      }
+      h1 {
+        font-size: 0.8em;
+       margin: 0em;
+      }
+  }
+  

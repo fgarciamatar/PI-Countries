@@ -15,8 +15,14 @@
 }
 
 .pagination {
-    list-style: none;
+    /* list-style: none;
+    justify-content: center; */
     display: flex;
-    justify-content: center;
     margin-top: 20px;
 }
+
+@media (max-width: 800px) {
+   .container{
+    margin: 0;
+   }
+  }

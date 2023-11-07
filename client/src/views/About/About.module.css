@@ -39,10 +39,7 @@ body{
    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
-.funcionalidades li {
-  margin: 0.5em;
-  padding: 1em;
-}
+
 
 .tec {
   background-color: #139f75;
@@ -85,4 +82,46 @@ body{
   &:hover{
     background-color: rgba(240, 248, 255, 0);
   }
+}
+
+@media (max-width: 800px) {
+  .container {
+    margin:1em 0.5em ;
+    width: 80%;
+  }
+  .about {
+    margin: 0em;
+    padding: 0.1em 1.2em;
+  }
+
+  .container p,
+.container span, h1 {
+  font-size: 0.9em;
+}
+
+.tec {
+  padding: 1em;
+  margin: 0.2em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.tec img {
+  width: 3em;
+  margin: 0.1em;
+}
+.imgContainer {
+  width: max-content;
+  padding: 0.2em 0.3em;
+  margin: 0.5em;
+}
+.imgContainer img {
+  width: 2.3em;
+  margin: 0.1em 0.3em;
+}
+
+
 }

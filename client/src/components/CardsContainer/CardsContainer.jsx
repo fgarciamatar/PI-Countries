@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Card from "../Card/Card";
-import Pagination from "../Pagination/Pagination";
+import PaginationView from "../Pagination/Pagination";
 import { getActivities } from "./../../redux/actions";
 import style from "./CardsContainer.module.css";
 //este componente renderiza cada Card
@@ -52,7 +52,7 @@ const CardsContainer = () => {
         })}
       </div>
       <div className={style.pagination}>
-        <Pagination //renderizamos el componente Pagination 
+        <PaginationView //renderizamos el componente Pagination 
           countriesPerPage={countriesPerPage} //cant de Paises por pagina
           totalCountries={countries.length} // cantidad total de paises (250)
           currentPage={currentPage} // pagina Actual

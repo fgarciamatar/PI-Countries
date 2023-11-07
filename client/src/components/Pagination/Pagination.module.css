@@ -72,3 +72,28 @@
   box-shadow: 2px 2px 5px rgba(255, 255, 255, 0.9);
 }
 
+@media screen and (max-width: 800px) {
+  .containerBotones {
+    flex-direction: column; /* Cambia a dirección de columna */
+  }
+
+  .containerPage {
+    display: flex;
+    flex-wrap: wrap;
+    
+  }
+
+  .pagination {
+    height: auto; /* Cambia la altura automática */
+    
+  }
+
+  ul {
+    flex-direction: column; /* Cambia a dirección de columna */
+    align-items: center; /* Centra los elementos en la columna */
+  }
+
+  a {
+    margin: 0.2em ; /* Agrega espacio entre los enlaces */
+  }
+}
